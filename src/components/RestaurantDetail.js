@@ -7,10 +7,11 @@ import RestaurantMenu from "./RestaurantMenu";
 import RestaurantNestedMenu from "./RestaurantNestedMenu";
 
 const RestaurantDetail = () => {
+  const [hide, setHide] = useState(0);
   const { resId } = useParams();
 
   const resDetail = useRestuarantDetail(resId);
-  // console.log(resDetail)
+  //console.log(resDetail)
 
   if (resDetail == null) return <Shimmer />;
   const { name, cuisines } = resDetail[2].card.card.info;
@@ -27,28 +28,28 @@ const RestaurantDetail = () => {
       data.card.card?.["@type"] ==
       "type.googleapis.com/swiggy.presentation.food.v2.NestedItemCategory"
   );
-  
-  //console.log(MenuCategory);
+
+  //console.log(resDetail[3].groupedCard.cardGroupMap.REGULAR);
   return (
     <div className="text-center">
       <h2 className="font-bold text-3xl	 mt-4">{name}</h2>
       <p className="italic m-2">{cuisines.map((data) => data).join(", ")}</p>
-      {/* <div>
-        {MenuNestedCategory.map((data) => (
-           <div className="font-bold text-xl m-2"> {data.card.card.title} </div>,
-        
-           {dc.map((data)=>(<RestaurantMenu int={data.card.card}/>))}
-        ))}
-      </div> */}
-      <div >
-        {MenuCategory.map((data) => (
-          
-          <RestaurantMenu key={data.card.card.title} internals={data} />
+
+      <div>
+        {MenuCategory.map((data, idx) => (
+          <RestaurantMenu
+            key={data.card.card.title}
+            hide={idx === hide}
+            idx={idx}
+            setHide={(dt) => {
+              setHide(dt);
+            }}
+            internals={data}
+          />
         ))}
       </div>
-      <div >
+      <div>
         {MenuNestedCategory.map((data) => (
-            
           <RestaurantNestedMenu key={data.card.card.title} internals={data} />
         ))}
       </div>

@@ -2,16 +2,16 @@ import React from "react";
 import ChildNestedFood from "./ChildNestedFood";
 import { useState } from "react";
 
-function ParentNestedFood(props) {
- const{title, itemCards} = props.int;
-  const [hide, setHide] = useState(false);
- const [sym, setSym] = useState("▼")
+function ParentNestedFood({int, idx, hide,setHide}) {
+  const { title, itemCards } = int;
+  
+  const [sym, setSym] = useState("▼");
   const handleHide = () => {
-    
-    setHide(!hide);
-    (sym == "▼")?setSym("▲"):setSym("▼")
+    hide ? setHide(null) : setHide(idx);
+
+    sym == "▼" ? setSym("▲") : setSym("▼");
   };
-  console.log(props.int);
+  //console.log(props.int);
   return (
     <div>
       <div className="mx-auto my-2 p-4 cursor-pointer">
