@@ -34,7 +34,7 @@ const AppBody = () => {
   const onlineCheck = useOnlineStatus();
   if (onlineCheck === false) {
     return (
-      <h3>
+      <h3 className="w-8/12 mx-auto mt-10 p-4 font-bold text-lg">
         Looks like you time-traveled back to the 19th century 😉 Check your
         internet and come back to the 21st century.
       </h3>
@@ -69,7 +69,7 @@ const AppBody = () => {
             className="px-4 py-1 mx-2 bg-gray-100 rounded-md hover:bg-gray-300"
             onClick={() => {
               const rerender = resNewList.filter(
-                (res) => res.info.avgRating > 4.5
+                (res) => res.info.avgRating >= 4.5
               );
               setResNewList(rerender);
             }}

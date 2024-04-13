@@ -21,7 +21,7 @@ function ParentNestedFood({int, idx, hide,setHide}) {
           </span>
           <span>{sym}</span>
         </div>
-        <div>{hide && <ChildNestedFood dt={itemCards} />}</div>
+        <div>{hide && <ChildNestedFood dt={itemCards} addState={true}/>}</div>
       </div>
     </div>
   );

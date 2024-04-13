@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import { useContext } from "react";
 import { NewUser } from "../utils/NewUser";
+import { useSelector } from "react-redux"
 
 const AppHead = () => {
   const [login, setLogin] = useState("Login");
@@ -12,13 +13,15 @@ const AppHead = () => {
   
   const {LoggedUser, setUser} = useContext(NewUser);
   
+  const cartItems = useSelector((store)=>store.cart.items)
+ console.log(cartItems)
   const changeUser = () => {
     if (login == "Login") setLogin(LoggedUser);
     else if (login == "Admin") setAnotherUser("True");
     else if(LoggedUser!=login && login!="Logged Out")setLogin(LoggedUser)
     else setLogin("Logged Out")
   };
-  console.log(LoggedUser);
+  //console.log(LoggedUser);
   return (
     <div className="flex justify-between bg-red-100 shadow-lg	">
       <div>
@@ -39,7 +42,9 @@ const AppHead = () => {
           <li className="mx-5">
             <Link to="/grocery">Grocery</Link>
           </li>
-          <li className="mx-5">Cart</li>
+          <li className="mx-5">
+          <Link to="/cart">Cart <span className="font-semibold ">({cartItems.length})</span></Link>
+            </li>
 
           {!anotherUser && (
             <button
