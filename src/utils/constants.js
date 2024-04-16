@@ -1,4 +1,4 @@
-export const resDetailLink ="https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=13.0446027&lng=80.2002754&restaurantId="
+export const resDetailLink ="https://crossorigin.me/https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=13.0446027&lng=80.2002754&restaurantId="
 export const cardImg = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/"
 export const logo = "https://cdn.dribbble.com/users/1191192/screenshots/4250680/media/69d7005d9c2a27cc27d549415633ab11.jpg";
 export const resList = [

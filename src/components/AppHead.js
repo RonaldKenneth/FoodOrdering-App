@@ -14,7 +14,7 @@ const AppHead = () => {
   const {LoggedUser, setUser} = useContext(NewUser);
   
   const cartItems = useSelector((store)=>store.cart.items)
- console.log(cartItems)
+ 
   const changeUser = () => {
     if (login == "Login") setLogin(LoggedUser);
     else if (login == "Admin") setAnotherUser("True");
