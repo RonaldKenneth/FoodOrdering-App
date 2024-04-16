@@ -9,7 +9,7 @@ import RestaurantDetail from "./src/components/RestaurantDetail";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import { NewUser } from "./src/utils/NewUser";
 import { Provider } from "react-redux";
-import appStore from "./src/utils/AppStore";
+import appStore from "./src/utils/appStore";
 import Cart from "./src/components/Cart";
 
 const Grocery = lazy(() => import("./src/components/Grocery"));

@@ -36,7 +36,6 @@ export const withAlteredCard = (AppBodyCard) => {
           </div>
         </div>
         <div>
-          {" "}
           <AppBodyCard {...props} />
         </div>
       </div>

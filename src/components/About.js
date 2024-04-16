@@ -10,7 +10,7 @@ class About extends Component {
       <div>
         <h1 className="my-4 text-xl font-bold">About US</h1>
         <h3 className="my-4 font-semibold">
-          This is FoodApp created using React
+          This is FoodApp created using React and Redux
         </h3>
         <NewUser.Consumer>
           {(dt)=><UserFn name={dt.LoggedUser}/>}
